@@ -1,0 +1,33 @@
+{
+  "name": "pruebatrabajo01",
+  "version": "1.0.0",
+  "description": "Demostrativo de la logica de programacion pero diseño es poco",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StringCGE/PruebaTrabajo01.git"
+  },
+  "keywords": [
+    "NODEJS",
+    "CRUD",
+    "PRUEBA"
+  ],
+  "author": "CGE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StringCGE/PruebaTrabajo01/issues"
+  },
+  "homepage": "https://github.com/StringCGE/PruebaTrabajo01#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
