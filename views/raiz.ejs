@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partes/head.ejs'); %>
+    <title>Document</title>
+</head>
+
+<body class="container-fluid">
+    <main class="container-md" Style="padding-top: .75rem;">
+        <form id="formPremio" action="/app/index.app" method="get">
+            <div class="align-item-center">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Nombres: </span>
+                    <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombre"
+                           name="nombre" id="nombre" />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Apellidos: </span>
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos"
+                           name="apellido" id="apellido" />
+                </div>
+				<div class="input-group mb-3">
+                    <span class="input-group-text">Usuario: </span>
+                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Nombre"
+                           name="usuario" id="nombre" />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Contraseña: </span>
+                    <input type="text" class="form-control" placeholder="Contraseña" aria-label="Apellidos"
+                           name="contrasena" id="apellido" />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3"
+                            name="enviar">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+</body>
+
+</html>
