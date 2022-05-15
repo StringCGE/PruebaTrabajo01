@@ -8,43 +8,7 @@
 
         <link TYPE="text/css" href="/css/page1.css" rel="stylesheet">
         <script src="/js/page1.js"></script>
-        <script>
-            function listar() {
-                alert("listar view");
-            }
-            function listar(id) {
-                alert("listar");
-            }
-            function crear() {
-                alert("crear view");
-            }
-            function crear(nombre) {
-                alert("crear");
-            }
-            function alterar(id) {
-                alert("Alterar inicio");
-            }
-            function alterar(id, nombre) {
-                alert("Alterar");
-            }
-            function eliminar(id) {
-                alert("Eliminar");
-            }
-            function accion(id) {
-                var img_accion = document.getElementById('img-accion');
-                img_accion.setAttribute("src", "/img/default-user.png");
-                $("#txt-accion").html("Hola" + id);
-            }
-        </script>
-        <style>
-            .basecolor {
-                background-color: rgb(88, 88, 88);
-            }
-
-            .color2 {
-                background-color: rgb(136, 136, 136);
-            }
-        </style>
+        <script src="/js/clienteWeb.js"></script></script>
 </head>
 
 <body>
@@ -66,29 +30,45 @@
                 <div id="caja1" class="row basecolor" style="height:150px;">
                     <article class="row m-1 tab-contact color2">
                         <div class="row tab-height color2">
-                            <input type="button" onclick="listar();" class="tab-height color2" value="listaro" />
+                            <input value="prospecto listar"
+                                   onclick="view_listarProspecto();" type="button" class="tab-height color2"/>
                         </div>
                     </article>
                     <article class="row m-1 tab-contact color2">
                         <div class="row tab-height color2">
-                            <input type="button" onclick="crear();" class="tab-height color2" value="crear" />
+                            <input value="prospecto agregar"
+                                   onclick="view_alterarProspecto();" type="button" class="tab-height color2"/>
                         </div>
                     </article>
                     <article class="row m-1 tab-contact color2">
                         <div class="row tab-height color2">
-                            <input type="button" onclick="crear();" class="tab-height color2" value="crear" />
+                            <input value="nacionalidad listar"
+                                   onclick="listar();" type="button" class="tab-height color2"/>
                         </div>
                     </article>
                     <article class="row m-1 tab-contact color2">
                         <div class="row tab-height color2">
-                            <input type="button" onclick="crear();" class="tab-height color2" value="crear" />
+                            <input value="nacionalidad agregar"
+                                   onclick="listar();" type="button" class="tab-height color2"/>
+                        </div>
+                    </article>
+                    <article class="row m-1 tab-contact color2">
+                        <div class="row tab-height color2">
+                            <input value="sexo listar"
+                                   onclick="listar();" type="button" class="tab-height color2"/>
+                        </div>
+                    </article>
+                    <article class="row m-1 tab-contact color2">
+                        <div class="row tab-height color2">
+                            <input value="sexo agregar"
+                                   onclick="listar();" type="button" class="tab-height color2"/>
                         </div>
                     </article>
                 </div>
             </div>
             <div class="col-5 col-sm-8 border">
                 <div class="row tab-height img-col">
-                    <img id="img-accion" class="p-2 rounded-circle img-tam" src="http://localhost/img/img1.jpg">
+                    <img id="img-accion" class="p-2 img-tam" src="http://localhost/img/img1.jpg">
                     <div class="col">
                         <span id="txt-accion">
                             <h2>Accion</h2>

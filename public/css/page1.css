@@ -25,3 +25,11 @@
     height: 400px;/*calc(100% - (120px));*/
     /*overflow-y: hidden;*/
 }
+
+.basecolor {
+    background-color: rgb(88, 88, 88);
+}
+
+.color2 {
+    background-color: rgb(136, 136, 136);
+}
