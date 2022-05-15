@@ -1,21 +1,42 @@
 function view_listarProspecto() {
     actividad('listar');
     actividadDe(`Listar Prospecto`);
-}
-function listarProspecto(id) {
+    let parametros = {
 
+    }
+    //?_method=DELETE
+    $.ajax({
+        data:  parametros,
+        url:   '/prospecto/page/list',
+        type:  'get',
+        beforeSend: function () {
+            //$("#resultado").html("Procesando, espere por favor...");
+        },
+        success:  function (response) {
+            $("#caja2").html(response);
+        }
+    });
 }
+//'/api/prueba.app?_method=DELETE'
 function view_crearProspecto() {
     actividad('agregar');
     actividadDe(`Crear Prospecto`);
-}
-function crearProspecto(nombre) {
 
 }
 function view_alterarProspecto(id) {
     actividad('listar');
     actividadDe(`Modificar Prospecto`);
+
 }
+
+function listarProspecto(id) {
+
+}
+
+function crearProspecto(nombre) {
+
+}
+
 function alterarProspecto(id, nombre) {
     alert("Alterar");
 }
