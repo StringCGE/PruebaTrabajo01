@@ -25,6 +25,9 @@
 .tab_overflow_unset{
     overflow:unset;
 }
+.button_border_none{
+    border:0px;
+}
 .img-tam{
     width: 55px;
     height: 55px;

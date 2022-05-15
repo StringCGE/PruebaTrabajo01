@@ -1,19 +1,34 @@
-<div class="row align-item-center">
+<table>
+    <tr class='cabecera'>
+        <td class='celda'><strong>ID				</strong></td>
+        <td class='celda'><strong>CEDULA			</strong></td>
+        <td class='celda'><strong>PRIMER_NOMBRE		</strong></td>
+        <td class='celda'><strong>SEGUNDO_NOMBRE	</strong></td>
+        <td class='celda'><strong>PRIMER_APELLIDO	</strong></td>
+        <td class='celda'><strong>SEGUNDO_APELLIDO	</strong></td>
+        <td class='celda'><strong>SEXO				</strong></td>
+        <td class='celda'><strong>NACIONALIDAD		</strong></td>
+        <td class='celda'><strong>FECHA_NACIMIENTO	</strong></td>
+        <td class='celda'><strong>CORREO_ELECTRONICO</strong></td>
+        <td class='celda'><strong>CELULAR_#1		</strong></td>
+        <td class='celda'><strong>CELULAR_#2		</strong></td>
+        <td class='celda'><strong>DIRECCION_DOMICILIARIA		</strong></td>
+    </tr>
     <% result.forEach(function(res) { %>
-        <div class="card">
-            <div class="col">id: <%= res.id_prospecto %></div>   
-            <div class="col">cedula: <%= res.cedula %></div>         
-            <div class="col">cedula: <%= res.cedula %></div>         
-            <div class="col">p_nombre: <%= res.p_nombre %></div>       
-            <div class="col">s_nombre: <%= res.s_nombre %></div>       
-            <div class="col">p_apellido: <%= res.p_apellido %></div>     
-            <div class="col">s_apellido: <%= res.s_apellido %></div>     
-            <div class="col">sexo: <%= res.fk_sexo %></div>        
-            <div class="col">nacionalidad: <%= res.fk_nacionalidad %></div>
-            <div class="col">fecha nacimiento: <%= res.fecha_nac %></div>      
-            <div class="col">email: <%= res.email %></div>          
-            <div class="col">celular_1: <%= res.celular_1 %></div>      
-            <div class="col">celular_2: <%= res.celular_2 %></div>      
-        </div>
+    <tr>
+        <td class='celda numero' >	<%= res.id_prospecto %>		</td>
+        <td class='celda info' >	<%= res.cedula %>			</td>
+        <td class='celda info' >	<%= res.p_nombre %>			</td>
+        <td class='celda info' >	<%= res.s_nombre %>			</td>
+        <td class='celda info' >	<%= res.p_apellido %>		</td>
+        <td class='celda info' >	<%= res.s_apellido %>		</td>
+        <td class='celda info' >	<%= res.fk_sexo %>			</td>
+        <td class='celda info' >	<%= res.fk_nacionalidad %>	</td>
+        <td class='celda info' >	<%= res.fecha_nac %>		</td>
+        <td class='celda info' >	<%= res.email %>			</td>
+        <td class='celda info' >	<%= res.celular_1 %>		</td>
+        <td class='celda info' >	<%= res.celular_2 %>		</td>
+        <td class='celda info' >	<%= res.dir_domicilio %>	</td>
+    </tr>
     <% }); %>
-</div>
+</table>

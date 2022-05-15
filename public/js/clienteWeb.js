@@ -12,7 +12,7 @@ function view_listarProspecto() {
             //$("#resultado").html("Procesando, espere por favor...");
         },
         success:  function (response) {
-            $("#caja2").html(response);
+            $("#contenido").html(response);
         }
     });
 }
@@ -32,7 +32,7 @@ function view_agregarProspecto() {
         },
         success:  function (response) {
             console.log(response);
-            $("#caja2").html(response);
+            $("#contenido").html(response);
         }
     });
 }
@@ -51,7 +51,7 @@ function view_alterarProspecto(_id) {
             //$("#resultado").html("Procesando, espere por favor...");
         },
         success:  function (response) {
-            $("#caja2").html(response);
+            $("#contenido").html(response);
         }
     });
 }
@@ -80,7 +80,7 @@ function eliminarProspecto(id) {
             //$("#resultado").html("Procesando, espere por favor...");
         },
         success:  function (response) {
-            $("#caja2").html(response);
+            $("#contenido").html(response);
         }
     });
 }
