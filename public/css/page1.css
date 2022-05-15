@@ -1,0 +1,27 @@
+.tab-pane{ /*overflow-auto */
+    overflow-y:scroll;
+}
+.img-tam{
+    width: 55px;
+    height: 55px;
+}
+.img-col{
+    background-color: rgba(240,241,242, 1);
+}
+.fondo-col{
+    background-color: rgb(136, 136, 136);
+}
+.tab-height{
+    height: 60px;
+}
+.tab-height-info{
+    height: 60px;
+}
+.tab-contact{
+    width: 95%;
+    height: 60px;
+}
+.tab-contacts{
+    height: 400px;/*calc(100% - (120px));*/
+    /*overflow-y: hidden;*/
+}

@@ -3,43 +3,104 @@
 
 <head>
     <%- include('./partes/head.ejs'); %>
-    <title>Document</title>
+
+        <title>Documento</title>
+
+        <link TYPE="text/css" href="/css/page1.css" rel="stylesheet">
+        <script src="/js/page1.js"></script>
+        <script>
+            function listar() {
+                alert("listar view");
+            }
+            function listar(id) {
+                alert("listar");
+            }
+            function crear() {
+                alert("crear view");
+            }
+            function crear(nombre) {
+                alert("crear");
+            }
+            function alterar(id) {
+                alert("Alterar inicio");
+            }
+            function alterar(id, nombre) {
+                alert("Alterar");
+            }
+            function eliminar(id) {
+                alert("Eliminar");
+            }
+            function accion(id) {
+                var img_accion = document.getElementById('img-accion');
+                img_accion.setAttribute("src", "/img/default-user.png");
+                $("#txt-accion").html("Hola" + id);
+            }
+        </script>
+        <style>
+            .basecolor {
+                background-color: rgb(88, 88, 88);
+            }
+
+            .color2 {
+                background-color: rgb(136, 136, 136);
+            }
+        </style>
 </head>
 
-<body class="container-fluid">
-    <main class="container-md" Style="padding-top: .75rem;">
-        <form id="formPremio" action="/app/index.app" method="get">
-            <div class="align-item-center">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Nombres: </span>
-                    <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombre"
-                           name="nombre" id="nombre" />
+<body>
+    <div class="container-fluid d-flex flex-column vw-100 vh-100 basecolor">
+        <div class="row h-100">
+            <div id="cajota " class="col-7 col-sm-4">
+                <div class="row tab-height img-col">
+                    <img class="p-2 rounded-circle img-tam" src="/img/default-user.png">
+                    <div class="col">
+                        <span id="usuario">
+                            <h2>Usuario</h2>
+                        </span>
+                    </div>
                 </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Apellidos: </span>
-                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos"
-                           name="apellido" id="apellido" />
+                <div class="row tab-height-info bg-secondary">
+                    <span id="labeltag">Prueba</span>
+                    <span id="labeltag">Opciones</span>
                 </div>
-				<div class="input-group mb-3">
-                    <span class="input-group-text">Usuario: </span>
-                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Nombre"
-                           name="usuario" id="nombre" />
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Contraseña: </span>
-                    <input type="text" class="form-control" placeholder="Contraseña" aria-label="Apellidos"
-                           name="contrasena" id="apellido" />
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3"
-                            name="enviar">
-                        Agregar
-                    </button>
+                <div id="caja1" class="row basecolor" style="height:150px;">
+                    <article class="row m-1 tab-contact color2">
+                        <div class="row tab-height color2">
+                            <input type="button" onclick="listar();" class="tab-height color2" value="listaro" />
+                        </div>
+                    </article>
+                    <article class="row m-1 tab-contact color2">
+                        <div class="row tab-height color2">
+                            <input type="button" onclick="crear();" class="tab-height color2" value="crear" />
+                        </div>
+                    </article>
+                    <article class="row m-1 tab-contact color2">
+                        <div class="row tab-height color2">
+                            <input type="button" onclick="crear();" class="tab-height color2" value="crear" />
+                        </div>
+                    </article>
+                    <article class="row m-1 tab-contact color2">
+                        <div class="row tab-height color2">
+                            <input type="button" onclick="crear();" class="tab-height color2" value="crear" />
+                        </div>
+                    </article>
                 </div>
             </div>
-        </form>
-    </main>
-
+            <div class="col-5 col-sm-8 border">
+                <div class="row tab-height img-col">
+                    <img id="img-accion" class="p-2 rounded-circle img-tam" src="http://localhost/img/img1.jpg">
+                    <div class="col">
+                        <span id="txt-accion">
+                            <h2>Accion</h2>
+                        </span>
+                    </div>
+                </div>
+                <div id="caja2" class="row">
+                    Aqui van el resto de cosas
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
