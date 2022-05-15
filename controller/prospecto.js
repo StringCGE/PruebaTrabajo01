@@ -67,6 +67,7 @@ router.post('/', (req, res, next)=>{
     ];
     //res.render(req.body);
     console.log(arr);
+    //res.send("Consuuuuuuuuuuuuultaa");
     
     let insertquery = "INSERT INTO basededatos.prospecto (cedula, p_nombre, s_nombre, p_apellido, s_apellido, fk_sexo, fk_nacionalidad, fecha_nac, email, celular_1, celular_2, dir_domicilio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
     let query = sql.mysql.format(insertquery, arr);
