@@ -17,7 +17,7 @@ function view_listarProspecto() {
     });
 }
 //'/api/prueba.app?_method=DELETE'
-function view_crearProspecto() {
+function view_agregarProspecto() {
     actividad('agregar');
     actividadDe(`Crear Prospecto`);
     let parametros = {
@@ -31,6 +31,7 @@ function view_crearProspecto() {
             //$("#resultado").html("Procesando, espere por favor...");
         },
         success:  function (response) {
+            console.log(response);
             $("#caja2").html(response);
         }
     });

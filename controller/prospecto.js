@@ -9,7 +9,23 @@ router.get('/page/web',(req, res, next)=>{
     });
 });
 router.post('/page/web',(req, res, next)=>{
-    res.render(`../views/prospecto/add.ejs`);
+    let _sexo;
+    let _nacionalidad;
+    sql.ejecutar("SELECT * FROM basededatos.sexo;",(err, result)=>{
+        if (err) throw err;
+        console.log(result);
+        _sexo = result;
+        sql.ejecutar("SELECT * FROM basededatos.nacionalidad;",(err, result)=>{
+            if (err) throw err;
+            console.log(result);
+            _nacionalidad =result
+            res.render(`../views/prospecto/add.ejs`,{
+                sexo:_sexo,
+                nacionalidad:_nacionalidad
+            });
+        });
+    });
+    
 });
 router.put('/page/web',(req, res, next)=>{
     res.render(`../views/prospecto/alter.ejs`);
@@ -34,12 +50,26 @@ router.get('/:id', (req, res, next)=>{
 });
 
 router.post('/', (req, res, next)=>{
-    console.log(`POST /prospecto/ ${req.params.id}`);
-    if (req.params.name){
-
-    }
-    let insertquery = "INSERT INTO basededatos.prospecto (nombre) VALUES (?);"
-    let query = sql.mysql.format(insertquery, [req.params.id]);
+    console.log(`POST /prospecto/ ${req.body}`);
+    let arr = [
+        req.body.cedula,
+        req.body.p_nombre,
+        req.body.s_nombre,
+        req.body.p_apellido,
+        req.body.s_apellido,
+        req.body.fk_sexo,
+        req.body.fk_nacionalidad,
+        req.body.fecha_nac,
+        req.body.email,
+        req.body.celular_1,
+        req.body.celular_2,
+        req.body.dir_domicilio
+    ];
+    //res.render(req.body);
+    console.log(arr);
+    
+    let insertquery = "INSERT INTO basededatos.prospecto (cedula, p_nombre, s_nombre, p_apellido, s_apellido, fk_sexo, fk_nacionalidad, fecha_nac, email, celular_1, celular_2, dir_domicilio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+    let query = sql.mysql.format(insertquery, arr);
     sql.ejecutar(query  ,(err, result)=>{
         if (err) throw err;
         res.json(result);

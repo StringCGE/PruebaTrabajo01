@@ -1,5 +1,5 @@
 <main class="container-md" Style="padding-top: .75rem;">
-    <form id="formPremio" method="post" action="index.php?c=Gonzalez&f=gonzaleznuevo">
+    <form id="formPremio" method="post" action="/prospecto/">
         <div class="align-item-center">
             <div class="input-group mb-3">
                 <span class="input-group-text">Cedula: </span>
@@ -31,24 +31,35 @@
                        name="s_apellido"
                        id="s_apellido" />
             </div>
-
+            <div class="input-group mb-3">
+                <span class="input-group-text">Correo electronico: </span>
+                <input type="text" class="form-control" placeholder="Correo electronico"
+                       name="email"
+                       id="email" />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Fecha de nacimiento: </span>
+                <input type="text" id="datetimepicker-default" class="form-control"
+                name="fecha_nac"       
+                id="fecha_nac" />
+            </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Sexo: </span>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select name="fk_sexo" id="fk_sexo" class="form-select" aria-label="Sexo">
+					<option selected>Open this select menu</option>
+                    <% sexo.forEach(function(res) { %>
+                        <option value="<%= res.id_sexo %>"><%= res.detalle %></option>
+                    <% }); %>
                 </select>
             </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text">Nacionalidad: </span>
-                <select class="form-select" aria-label="Default select example">
+                <select name="fk_nacionalidad" id="fk_nacionalidad" class="form-select" aria-label="Default select example">
                     <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <% nacionalidad.forEach(function(res) { %>
+                        <option value="<%= res.id_nacionalidad %>"><%= res.detalle %></option>
+                    <% }); %>
                 </select>
             </div>
 
@@ -64,6 +75,13 @@
                        name="celular_2"
                        id="celular_2" />
             </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Domicilio: </span>
+                <input type="text" class="form-control" placeholder="Domicilio"
+                       name="dir_domicilio"
+                       id="dir_domicilio" />
+            </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3"
                         name="enviar">
@@ -72,4 +90,5 @@
             </div>
         </div>
     </form>
+
 </main>
