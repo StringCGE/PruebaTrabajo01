@@ -39,10 +39,11 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Fecha de nacimiento: </span>
-                <!--<input type="text" id="datetimepicker-default" class="form-control"
-                name="fecha_nac"       
-                id="fecha_nac" />-->
-                <input class="form-control" id="datetimepicker-default" type="date" name="fecha_nac" id="date">
+                <input class="form-control"
+                id="fecha_nac"
+                type="date" 
+                name="fecha_nac" 
+                min="1930-01-01" max="2010-12-31">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Sexo: </span>
@@ -108,27 +109,30 @@
 			var s_apellido = document.getElementById("s_apellido");
 			var fk_sexo = document.getElementById("fk_sexo");
 			var fk_nacionalidabd = document.getElementById("fk_nacionalidad");
-			var fecha_nac = document.getElementById("fecha_nac");
 			var email = document.getElementById("email");
+			var fecha_nac = document.getElementById("fecha_nac");
 			var celular_1 = document.getElementById("celular_1");
 			var celular_2 = document.getElementById("celular_2");
 			var dir_domicilio = document.getElementById("dir_domicilio");
 
-			var letra = /^[a-z ,.'-]+$/i;// letrasyespacio   ///^[A-Z]+$/i;// solo letras
+			var letra = /^[A-Z]+$/i;// letrasyespacio   ///^[A-Z]+$/i;// solo letras
 			var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 			var telefonoreg = /^[0-9]{10}$/g; // para validar datos que deban tener 10 numeros
 
-            resultado = evaluacedula(cedula, 0, 10, letra, "La cedula", resultado);
+            console.log("Pasa por aqui");
+            
+            resultado = evaluacedula(cedula, "La Cedula", resultado);
 			resultado = evaluatxt(p_nombre, 0, 40, letra, "El primer nombre", resultado);
             resultado = evaluatxt(s_nombre, 0, 40, letra, "El segundo nombre", resultado);
 			resultado = evaluatxt(p_apellido, 0, 40, letra, "El primer apellido", resultado);
 			resultado = evaluatxt(s_apellido, 0, 40, letra, "El segundo apellido", resultado);
+            resultado = evaluadate(fecha_nac, "La fecha", resultado);
             resultado = evaluaselect(fk_sexo, "El sexo", resultado);
             resultado = evaluaselect(fk_nacionalidabd, "La nacionalidad", resultado);
-			resultado = evaluaemail(email, 0, 100, correo, "El correo", resultado);
+			resultado = evaluaemail(email, "El correo", resultado);
 			resultado = evaluacelular(celular_1, "El celular 1", resultado);
 			resultado = evaluacelular(celular_2, "El celular 2", resultado);
-            resultado = evaluatxt(dir_domicilio, "La direccion de domiciolio", resultado);
+            resultado = evaluatxt(dir_domicilio, 0, 100, /^[A-Z# -_]+$/i,"La direccion de domiciolio", resultado);
             
 			if (!resultado) {
 				event.preventDefault();  // detener el evento  //stop form from submitting

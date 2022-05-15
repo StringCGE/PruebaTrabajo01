@@ -43,5 +43,5 @@ const nombre = function(nom){
 }
 
 const celular = function(cel){
-    return !(/^[0-9]{10}$/g).test(cel);
+    return (/^[0-9]{10}$/g).test(cel);
 }

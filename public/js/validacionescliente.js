@@ -63,22 +63,37 @@ function mensaje(elemento, nombre, cadenaMensaje) {
     }
 }
 
-function evaluaemail(txt, regexp, nombre, resultado){
-    var strResult = correo(txt);
+function evaluaemail(txt, nombre, resultado){
+    var strResult = "";
+    if (correo(txt.value)){
+        strResult = "";
+    }else{
+        strResult = "es incorrecto";
+    }
     return evalua(txt, strResult, nombre, resultado);
 }
 
-function evaluacedula(txt, regexp, nombre, resultado){
-    var strResult = cedula(txt);
+function evaluacedula(txt, nombre, resultado){
+    var strResult = "";
+    if (cedula(txt.value)){
+        strResult = "";
+    }else{
+        strResult = "es incorrecta";
+    }
     return evalua(txt, strResult, nombre, resultado);
 }
-function evaluacelular(txt, regexp, nombre, resultado){
-    var strResult = celular(txt);
+function evaluacelular(txt, nombre, resultado){
+    var strResult = "";
+    if (celular(txt.value)){
+        strResult = "";
+    }else{
+        strResult = "es incorrecta";
+    }
     return evalua(txt, strResult, nombre, resultado);
 }
 
 function evaluatxt(txt, min, max, regexp, nombre, resultado) {
-    var strResult = esVacio(txt, min, max, /[a-z]+/gi);
+    var strResult = esVacio(txt, min, max, regexp);
     return evalua(txt, strResult, nombre, resultado);
 }
 
@@ -95,6 +110,16 @@ function evaluaselect(select, nombre, resultado) {
         strResult = "debe ser seleccionada";
     }
     return evalua(select, strResult, nombre, resultado);
+}
+
+function evaluadate(date, nombre, resultado) {
+    var strResult = "";
+    var value = date.value;
+    console.log(value);
+    if (value == null || value == 0) {
+        strResult = "debe ser seleccionada";
+    }
+    return evalua(date, strResult, nombre, resultado);
 }
 
 function evalua(elem, strResult, nombre, resultado) {
