@@ -4,10 +4,9 @@ function view_listarProspecto() {
     let parametros = {
 
     }
-    //?_method=DELETE
     $.ajax({
         data:  parametros,
-        url:   '/prospecto/page/list',
+        url:   '/prospecto/page/web',
         type:  'get',
         beforeSend: function () {
             //$("#resultado").html("Procesando, espere por favor...");
@@ -21,12 +20,39 @@ function view_listarProspecto() {
 function view_crearProspecto() {
     actividad('agregar');
     actividadDe(`Crear Prospecto`);
+    let parametros = {
 
+    }
+    $.ajax({
+        data:  parametros,
+        url:   '/prospecto/page/web',
+        type:  'post',
+        beforeSend: function () {
+            //$("#resultado").html("Procesando, espere por favor...");
+        },
+        success:  function (response) {
+            $("#caja2").html(response);
+        }
+    });
 }
-function view_alterarProspecto(id) {
+function view_alterarProspecto(_id) {
     actividad('listar');
     actividadDe(`Modificar Prospecto`);
-
+    let parametros = {
+        id:_id
+    }
+    //
+    $.ajax({
+        data:  parametros,
+        url:   '/prospecto/page/web/?_method=PUT',
+        type:  'post',
+        beforeSend: function () {
+            //$("#resultado").html("Procesando, espere por favor...");
+        },
+        success:  function (response) {
+            $("#caja2").html(response);
+        }
+    });
 }
 
 function listarProspecto(id) {
@@ -41,7 +67,21 @@ function alterarProspecto(id, nombre) {
     alert("Alterar");
 }
 function eliminarProspecto(id) {
-    alert("Eliminar");
+    let parametros = {
+        id:_id
+    }
+    //
+    $.ajax({
+        data:  parametros,
+        url:   '/prospecto/web/?_method=DELETE',
+        type:  'post',
+        beforeSend: function () {
+            //$("#resultado").html("Procesando, espere por favor...");
+        },
+        success:  function (response) {
+            $("#caja2").html(response);
+        }
+    });
 }
 function accion(id) {
     var img_accion = document.getElementById('img-accion');

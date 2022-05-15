@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const sql = require('../model/MySQL_POOL.js');
 
-router.get('/page/list',(req, res, next)=>{
+router.get('/page/web',(req, res, next)=>{
     sql.ejecutar("SELECT * FROM basededatos.prospecto;",(err, result)=>{
         if (err) throw err;
         console.log(result)
         res.render(`../views/prospecto/list.ejs`, {result:result});
     });
 });
-router.get('/page/add',(req, res, next)=>{
+router.post('/page/web',(req, res, next)=>{
     res.render(`../views/prospecto/add.ejs`);
 });
-router.get('/page/altere',(req, res, next)=>{
-    res.render(`../views/prospecto/altere.ejs`);
+router.put('/page/web',(req, res, next)=>{
+    res.render(`../views/prospecto/alter.ejs`);
 });
 
 router.get('/', (req, res, next)=>{
