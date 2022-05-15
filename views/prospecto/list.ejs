@@ -1,5 +1,34 @@
-<div class="column">
+<div class="column flex-fill border">
+    <div class="row">
+        <div class="col">id</div>
+        <div class="col">cedula</div>
+        <div class="col">cedula</div>
+        <div class="col">p_nombre</div>
+        <div class="col">s_nombre</div>
+        <div class="col">p_apellido</div>
+        <div class="col">s_apellido</div>
+        <div class="col">sexo</div>
+        <div class="col">nacionalidad</div>
+        <div class="col">fecha nacimiento</div>
+        <div class="col">email</div>
+        <div class="col">celular_1</div>
+        <div class="col">celular_2</div>
+    </div>
     <% result.forEach(function(res) { %>
-       
+        <div class="row">
+            <div class="col"><%= res.id_prospecto %></div>
+            <div class="col"><%= res.cedula %></div>
+            <div class="col"><%= res.cedula %></div>
+            <div class="col"><%= res.p_nombre %></div>
+            <div class="col"><%= res.s_nombre %></div>
+            <div class="col"><%= res.p_apellido %></div>
+            <div class="col"><%= res.s_apellido %></div>
+            <div class="col"><%= res.fk_sexo %></div>
+            <div class="col"><%= res.fk_nacionalidad %></div>
+            <div class="col"><%= res.fecha_nac %></div>
+            <div class="col"><%= res.email %></div>
+            <div class="col"><%= res.celular_1 %></div>
+            <div class="col"><%= res.celular_2 %></div>
+        </div>
     <% }); %>
 </div>
