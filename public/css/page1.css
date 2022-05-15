@@ -1,6 +1,30 @@
 .tab-pane{ /*overflow-auto */
     overflow-y:scroll;
 }
+.tab_pane-x-y{ /*overflow-auto */
+    overflow:scroll;
+}
+.tab_overflow_auto{
+    overflow:auto;
+}
+.tab_overflow_hidden{
+    overflow:hidden;
+}
+.tab_overflow_scroll{
+    overflow:scroll;
+}
+.tab_overflow_visible{
+    overflow:visible;
+}
+.tab_overflow_inherit{
+    overflow:inherit;
+}
+.tab_overflow_initial{
+    overflow:initial;
+}
+.tab_overflow_unset{
+    overflow:unset;
+}
 .img-tam{
     width: 55px;
     height: 55px;
@@ -33,3 +57,24 @@
 .color2 {
     background-color: rgb(136, 136, 136);
 }
+
+#estiloTabla{
+    width: 50%;
+    text-align: center;
+    margin-left:20%;
+    padding-top: 2%;
+}
+.cabecera, .numero{
+    background-color:lightblue;
+}
+.celda{
+    border:  white 1px solid;
+}
+.info{
+    background-color:lightgray;
+}
+table{
+    width: 100%;
+    padding-bottom: 5%;
+}
+
