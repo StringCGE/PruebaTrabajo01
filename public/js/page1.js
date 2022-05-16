@@ -17,8 +17,6 @@ function asignaAltoFaltante_class(){
     }
 }
 function asignaAltoFaltante_elem(caja){
-    console.log("desde asigna");
-    console.log(caja);
     if (caja == null){
         return;
     }

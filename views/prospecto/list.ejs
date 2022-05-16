@@ -1,34 +1,37 @@
-<table>
+<table id="tablita">
     <tr class='cabecera'>
-        <td class='celda'><strong>ID				</strong></td>
-        <td class='celda'><strong>CEDULA			</strong></td>
-        <td class='celda'><strong>PRIMER_NOMBRE		</strong></td>
-        <td class='celda'><strong>SEGUNDO_NOMBRE	</strong></td>
-        <td class='celda'><strong>PRIMER_APELLIDO	</strong></td>
-        <td class='celda'><strong>SEGUNDO_APELLIDO	</strong></td>
-        <td class='celda'><strong>SEXO				</strong></td>
-        <td class='celda'><strong>NACIONALIDAD		</strong></td>
-        <td class='celda'><strong>FECHA_NACIMIENTO	</strong></td>
+        <td class='celda'><strong>ID</strong></td>
+        <td class='celda'><strong>CEDULA</strong></td>
+        <td class='celda'><strong>PRIMER_NOMBRE</strong></td>
+        <td class='celda'><strong>SEGUNDO_NOMBRE</strong></td>
+        <td class='celda'><strong>PRIMER_APELLIDO</strong></td>
+        <td class='celda'><strong>SEGUNDO_APELLIDO</strong></td>
+        <td class='celda'><strong>SEXO</strong></td>
+        <td class='celda'><strong>NACIONALIDAD</strong></td>
+        <td class='celda'><strong>FECHA_NACIMIENTO</strong></td>
         <td class='celda'><strong>CORREO_ELECTRONICO</strong></td>
-        <td class='celda'><strong>CELULAR_#1		</strong></td>
-        <td class='celda'><strong>CELULAR_#2		</strong></td>
-        <td class='celda'><strong>DIRECCION_DOMICILIARIA		</strong></td>
+        <td class='celda'><strong>CELULAR_#1</strong></td>
+        <td class='celda'><strong>CELULAR_#2</strong></td>
+        <td class='celda'><strong>DIRECCION_DOMICILIARIA</strong></td>
     </tr>
     <% result.forEach(function(res) { %>
-    <tr>
-        <td class='celda numero' >	<%= res.id_prospecto %>		</td>
-        <td class='celda info' >	<%= res.cedula %>			</td>
-        <td class='celda info' >	<%= res.p_nombre %>			</td>
-        <td class='celda info' >	<%= res.s_nombre %>			</td>
-        <td class='celda info' >	<%= res.p_apellido %>		</td>
-        <td class='celda info' >	<%= res.s_apellido %>		</td>
-        <td class='celda info' >	<%= res.fk_sexo %>			</td>
-        <td class='celda info' >	<%= res.fk_nacionalidad %>	</td>
-        <td class='celda info' >	<%= res.fecha_nac %>		</td>
-        <td class='celda info' >	<%= res.email %>			</td>
-        <td class='celda info' >	<%= res.celular_1 %>		</td>
-        <td class='celda info' >	<%= res.celular_2 %>		</td>
-        <td class='celda info' >	<%= res.dir_domicilio %>	</td>
+    <tr class="columna">
+        <td class='celda-numero'><strong><%= res.id_prospecto %></strong></td>
+        <td class='celda-info'><strong><%= res.cedula %></strong></td>
+        <td class='celda-info'><strong><%= res.p_nombre %></strong></td>
+        <td class='celda-info'><strong><%= res.s_nombre %></strong></td>
+        <td class='celda-info'><strong><%= res.p_apellido %></strong></td>
+        <td class='celda-info'><strong><%= res.s_apellido %></strong></td>
+        <td class='celda-info'><strong><%= res.sexo %></strong></td>
+        <td class='celda-info'><strong><%= res.nacionalidad %></strong></td>
+        <td class='celda-info'><strong><%= res.fecha_nac %></strong></td>
+        <td class='celda-info'><strong><%= res.email %></strong></td>
+        <td class='celda-info'><strong><%= res.celular_1 %></strong></td>
+        <td class='celda-info'><strong><%= res.celular_2 %></strong></td>
+        <td class='celda-info'><strong><%= res.dir_domicilio %></strong></td>
     </tr>
     <% }); %>
 </table>
+<script>
+    cargar();
+</script>

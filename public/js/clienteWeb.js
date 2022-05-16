@@ -31,7 +31,6 @@ function view_agregarProspecto() {
             //$("#resultado").html("Procesando, espere por favor...");
         },
         success:  function (response) {
-            console.log(response);
             $("#contenido").html(response);
         }
     });
@@ -107,3 +106,21 @@ function actividad(value){
 function listar(){
     alert("caracteristica aun no soportada");
 }
+let id_altera = -1;
+function cargar(){
+    $("#tablita tr").click(function(){  
+        $(this).addClass('selected').siblings().removeClass('selected');    
+        var value=$(this).find('td:first').html();
+        console.log(value);
+        alert(value);
+    });
+}
+
+function alterarprospectobutton(){
+    if(id_altera != -1){
+
+    }else{
+        alert("Seleccione su ")
+    }
+}
+

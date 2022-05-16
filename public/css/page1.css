@@ -71,7 +71,19 @@
     background-color:lightblue;
 }
 .celda{
-    border:  white 1px solid;
+    border:  rgb(146, 145, 145) 1px solid;
+}
+.columna .celda-info{
+    background-color:lightgray;
+}
+.columna .celda-numero{
+    background-color:lightblue;
+}
+.celda-info{
+    border:  rgb(146, 145, 145) 1px solid;
+}
+.celda-numero{
+    border:  rgb(146, 145, 145) 1px solid;
 }
 .info{
     background-color:lightgray;
@@ -81,3 +93,9 @@ table{
     padding-bottom: 5%;
 }
 
+
+
+.selected {
+    background-color: brown;
+    color: #FFF;
+}

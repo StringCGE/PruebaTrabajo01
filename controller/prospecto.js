@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const sql = require('../model/MySQL_POOL.js');
-
+const sql_select = 'SELECT `prospecto`.`id_prospecto`, `prospecto`.`cedula`, `prospecto`.`p_nombre`, `prospecto`.`s_nombre`, `prospecto`.`p_apellido`, `prospecto`.`s_apellido`, `sexo`.`detalle` as `sexo`, `nacionalidad`.`detalle` as `nacionalidad`, `prospecto`.`fecha_nac`, `prospecto`.`email`, `prospecto`.`celular_1`, `prospecto`.`celular_2`, `prospecto`.`dir_domicilio` FROM `basededatos`.`prospecto` inner join `basededatos`.`sexo` on `basededatos`.`prospecto`.`fk_sexo` = `basededatos`.`sexo`.`id_sexo` inner join `basededatos`.`nacionalidad` on `basededatos`.`prospecto`.`fk_nacionalidad` = `basededatos`.`nacionalidad`.`id_nacionalidad`';
 router.get('/page/web',(req, res, next)=>{
-    sql.ejecutar("SELECT * FROM basededatos.prospecto;",(err, result)=>{
+    sql.ejecutar(sql_select ,(err, result)=>{
         if (err) throw err;
-        console.log(result)
         res.render(`../views/prospecto/list.ejs`, {result:result});
     });
 });
@@ -13,11 +12,9 @@ router.post('/page/web',(req, res, next)=>{
     let _nacionalidad;
     sql.ejecutar("SELECT * FROM basededatos.sexo;",(err, result)=>{
         if (err) throw err;
-        console.log(result);
         _sexo = result;
         sql.ejecutar("SELECT * FROM basededatos.nacionalidad;",(err, result)=>{
             if (err) throw err;
-            console.log(result);
             _nacionalidad =result
             res.render(`../views/prospecto/add.ejs`,{
                 sexo:_sexo,
@@ -33,7 +30,7 @@ router.put('/page/web',(req, res, next)=>{
 
 router.get('/', (req, res, next)=>{
     //res.send("GET /prospecto");
-    sql.ejecutar("SELECT * FROM basededatos.prospecto;",(err, result)=>{
+    sql.ejecutar(sql_select ,(err, result)=>{
         if (err) throw err;
         res.json(result);
     });
@@ -41,7 +38,7 @@ router.get('/', (req, res, next)=>{
 
 router.get('/:id', (req, res, next)=>{
     console.log(`GET /prospecto/:id ${req.params.id}`);
-    let insertquery = "SELECT * FROM basededatos.prospecto where id=?;"
+    let insertquery = sql_select + " where id=?;"
     let query = sql.mysql.format(insertquery, [req.params.id]);
     sql.ejecutar(query  ,(err, result)=>{
         if (err) throw err;
