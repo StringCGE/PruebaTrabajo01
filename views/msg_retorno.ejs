@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partes/head.ejs'); %>
+
+        <title>Documento</title>
+        <link TYPE="text/css" href="/css/page1.css" rel="stylesheet">
+        <script src="/js/page1.js"></script>
+        <script src="/js/clienteWeb.js"></script>
+        <script src="/js/validadores.js"></script>
+        <script src="/js/validacionescliente.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-column vw-100 vh-100 basecolor">
+		<form name="formprospecto" id="formprospecto" method="get" action="/">
+			<div class="align-item-center">
+				<div class="input-group mb-3">
+					<div class="align-item-center">
+						<div stylr="color: #FFF;">
+                            <h1><%= msg %></h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto">
+					<button type="submit" class="btn btn-primary mb-3"
+							name="enviar">
+						Regresar
+					</button>
+				</div>
+			</div>
+		</form>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/customalert.js"></script>
+</body>
+
+</html>

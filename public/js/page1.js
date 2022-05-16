@@ -32,17 +32,18 @@ function asignaAltoFaltante_elem(caja){
     var val = parent.clientHeight - iable - 1;
     caja.style.height = val + "px";
 }
+function resize(){
+    caja1.style.height = "0px";
+    caja2.style.height = "0px";
+    asignaAltoFaltante_elem(caja1);
+    asignaAltoFaltante_elem(caja2);
+}
 window.onload = async () => {
     caja1 = document.getElementById('caja1');
     caja2 = document.getElementById('caja2');
-    caja1.style.height = "0px";
-    caja2.style.height = "0px";
-    asignaAltoFaltante_elem(caja1);
-    asignaAltoFaltante_elem(caja2);
+    resize();
 };
 window.onresize = async () => {
-    caja1.style.height = "0px";
-    caja2.style.height = "0px";
-    asignaAltoFaltante_elem(caja1);
-    asignaAltoFaltante_elem(caja2);
+    resize();
 };
+

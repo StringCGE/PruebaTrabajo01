@@ -1,1 +1,164 @@
-alter
+<main class="container-md" Style="padding-top: .75rem;">
+    <form name="formprospecto" id="formprospecto" method="post" action="/prospecto/?_method=PUT">
+        <div class="align-item-center">
+            <input type="hidden"
+                       name="id_prospecto"
+                       value=<%= result.id_prospecto %> />
+            <div class="input-group mb-3">
+                <span class="input-group-text">Cedula: </span>
+                <input type="text" class="form-control" placeholder="Cedula"
+                       name="cedula"
+                       id="cedula"
+                       value=<%= result.cedula %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Primer nombre: </span>
+                <input type="text" class="form-control" placeholder="Primer nombre"
+                       name="p_nombre"
+                       id="p_nombre"
+                       value=<%= result.p_nombre %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Segundo nombre: </span>
+                <input type="text" class="form-control" placeholder="Segundo nombre"
+                       name="s_nombre"
+                       id="s_nombre"
+                       value=<%= result.s_nombre %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Primer apellido: </span>
+                <input type="text" class="form-control" placeholder="Primer apellido"
+                       name="p_apellido"
+                       id="p_apellido"
+                       value=<%= result.p_apellido %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Segundo apellido: </span>
+                <input type="text" class="form-control" placeholder="Segundo apellido"
+                       name="s_apellido"
+                       id="s_apellido"
+                       value=<%= result.s_apellido %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Correo electronico: </span>
+                <input type="text" class="form-control" placeholder="Correo electronico"
+                       name="email"
+                       id="email"
+                       value=<%= result.email %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Fecha de nacimiento: </span>
+                <input class="form-control"
+                id="fecha_nac"
+                type="date" 
+                name="fecha_nac" 
+                min="1930-01-01" max="2010-12-31"
+                value=<%= result.fecha_nac %>>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Sexo: </span>
+                <select name="fk_sexo" id="fk_sexo" class="form-select" aria-label="Sexo">
+					<option selected>Open this select menu</option>
+                    <% sexo.forEach(function(res) { %>
+                        <option value="<%= res.id_sexo %>"><%= res.detalle %></option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Nacionalidad: </span>
+                <select name="fk_nacionalidad" id="fk_nacionalidad" class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <% nacionalidad.forEach(function(res) { %>
+                        <option value="<%= res.id_nacionalidad %>"><%= res.detalle %></option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Celular 1: </span>
+                <input type="text" class="form-control" placeholder="Celular 1"
+                       name="celular_1"
+                       id="celular_1"
+                       value=<%= result.celular_1 %> />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Celular 2: </span>
+                <input type="text" class="form-control" placeholder="Celular 2"
+                       name="celular_2"
+                       id="celular_2"
+                       value=<%= result.celular_2 %> />
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Domicilio: </span>
+                <input type="text" class="form-control" placeholder="Domicilio"
+                       name="dir_domicilio"
+                       id="dir_domicilio"
+                       value=<%= result.dir_domicilio %> />
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3"
+                        name="enviar">
+                    Agregar
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var form = document.querySelector("#formprospecto");
+        form.onsubmit = function(event){
+            
+            limpiarMensajes();
+			var resultado = true;
+			var strResult = "";
+			//var nombre = document.getElementById("nombre");
+			//var apellido = document.getElementById("apellido");
+			var cedula = document.getElementById("cedula");
+			var p_nombre = document.getElementById("p_nombre");
+			var s_nombre = document.getElementById("s_nombre");
+			var p_apellido = document.getElementById("p_apellido");
+			var s_apellido = document.getElementById("s_apellido");
+			var fk_sexo = document.getElementById("fk_sexo");
+			var fk_nacionalidabd = document.getElementById("fk_nacionalidad");
+			var email = document.getElementById("email");
+			var fecha_nac = document.getElementById("fecha_nac");
+			var celular_1 = document.getElementById("celular_1");
+			var celular_2 = document.getElementById("celular_2");
+			var dir_domicilio = document.getElementById("dir_domicilio");
+
+			var letra = /^[A-Z]+$/i;// letrasyespacio   ///^[A-Z]+$/i;// solo letras
+			var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+			var telefonoreg = /^[0-9]{10}$/g; // para validar datos que deban tener 10 numeros
+
+            console.log("Pasa por aqui");
+            
+            resultado = evaluacedula(cedula, "La Cedula", resultado);
+			resultado = evaluatxt(p_nombre, 0, 40, letra, "El primer nombre", resultado);
+            resultado = evaluatxt(s_nombre, 0, 40, letra, "El segundo nombre", resultado);
+			resultado = evaluatxt(p_apellido, 0, 40, letra, "El primer apellido", resultado);
+			resultado = evaluatxt(s_apellido, 0, 40, letra, "El segundo apellido", resultado);
+            resultado = evaluadate(fecha_nac, "La fecha", resultado);
+            resultado = evaluaselect(fk_sexo, "El sexo", resultado);
+            resultado = evaluaselect(fk_nacionalidabd, "La nacionalidad", resultado);
+			resultado = evaluaemail(email, "El correo", resultado);
+			resultado = evaluacelular(celular_1, "El celular 1", resultado);
+			resultado = evaluacelular(celular_2, "El celular 2", resultado);
+            resultado = evaluatxt(dir_domicilio, 0, 100, /^[A-Z# -_]+$/i,"La direccion de domiciolio", resultado);
+            
+			if (!resultado) {
+				event.preventDefault();  // detener el evento  //stop form from submitting
+				alert("Datos Incorrectos");
+			}/* else {
+				alert("Datos correctos");
+			}*/
+			//return resultado;
+        };
+		
+    </script>
+    <script>
+        cargar();
+        resize();
+    </script>
+</main>

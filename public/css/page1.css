@@ -99,3 +99,38 @@ table{
     background-color: brown;
     color: #FFF;
 }
+
+
+.miaccionbutton{
+    /*display: inline-block;*/
+    overflow:initial;
+    align-items: flex-start;
+	border-radius: 18px;
+    width: auto;
+    height: auto;
+    /*
+    overflow:auto;
+    text-align: center;
+	background: -webkit-linear-gradient(top, #f8f8f8, #d8d8d8);
+    cursor: default;
+    margin: 6px 14px;
+    border: 1px solid #aaa;
+    padding: 3px 7px;
+    color: #111;
+    user-select: none;
+    text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+	font-weight: bold !important;
+    outline: none;
+	font-size: 1em;
+	appearance: auto;
+    white-space: pre;
+    box-sizing: border-box;
+	writing-mode: horizontal-tb !important;
+	text-rendering: auto;
+	letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;*/
+}

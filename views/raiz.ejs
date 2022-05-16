@@ -38,7 +38,7 @@
                         <article class="row m-1 tab-contact color2">
                             <div class="row tab-height color2">
                                 <input value="prospecto listar"
-                                    onclick="view_listarProspecto();" type="button" class="button_border_none tab-height color2"/>
+                                    onclick="view_listarProspecto(null);" type="button" class="button_border_none tab-height color2"/>
                             </div>
                         </article>
                         <article class="row m-1 tab-contact color2">
@@ -84,283 +84,30 @@
                         </span>
                     </div>
                 </div>
-                <div class="row tab-height img-col">
-                    <img id="img-accion" class="p-2 img-tam" src="/img/default-user.png">
-                    <div class="col">
-                        <span id="txt-accion">
-                            <h2>Accion</h2>
-                        </span>
-                    </div>
+                <div class="row img-col text-center" id="botones-accion">
+                    <div>
+                        <input class="miaccionbutton m-1" onclick="alterarprospectobutton()" value="Editar" type="submit" id="input_go">
+                        <input class="miaccionbutton m-1" onclick="eliminarprospectobutton()" value="Eliminar" type="submit" id="input_go">
+                        <!--<input class="miaccionbutton m-1" value="Crear" type="submit" id="input_go">-->
+                    </div>          
                 </div>
-                <div id="caja2" class="row tab_pane-x-y basecolor"
-                
-                >
-                    <div class="row tab_overflow_initial" 
-                    style="
-                        align-items:flex-start;
-                    " id="contenido"
+                <div id="caja2" class="row tab_pane-x-y basecolor">
+                    <div class="row tab_overflow_initial" id="contenido"
+                        style="
+                            align-items:flex-start;/*esto no se debe eliminar*/
+                        "
                     >
-                        <table>
-                            <tr class='cabecera'>
-                                <td class='celda'><strong>ID</strong></td>
-                                <td class='celda'><strong>CEDULA O PASAPORTE</strong> </td>
-                                <td class='celda'><strong>APELLIDOS Y NOMBRES</strong></td>
-                                <td class='celda'><strong>EMAIL</strong></td>
-                                <td class='celda'><strong>TELEFONO</strong></td>
-                                <td class='celda'><strong>ADULTOS</strong></td>
-                                <td class='celda'><strong>NIÑOS</strong></td>
-                                <td class='celda'><strong>RESERVADO DESDE</strong></td>
-                                <td class='celda'><strong>DIAS RESERVADO</strong></td>
-                                <td class='celda'><strong>EDITAR</strong></td>
-                                <td class='celda'><strong>ELIMINAR</strong></td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                            <tr>
-                                <td class='celda numero' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                                <td class='celda info' >EDITAR</a> </td>
-                            </tr>
-                        </table>
-
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        visible_botones_accion(false);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/customalert.js"></script>
 </body>
 
 </html>
