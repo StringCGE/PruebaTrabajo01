@@ -1,3 +1,4 @@
 #ignorando la carpeta e modulos qu ese pueden descargar desde internet
 /node_modules
 .env.development
+~$*.*
